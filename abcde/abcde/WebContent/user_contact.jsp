@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<title>Feedback</title>
+
+
+<script>
+
+$(function() {
+function log( message ) {
+$( "<div>" ).text( message ).prependTo( "#log" );
+$( "#log" ).scrollTop( 0 );
+}
+$( "#city" ).autocomplete({
+source: function( request, response ) {
+$.ajax({
+url: "http://ws.geonames.org/searchJSON",
+dataType: "jsonp",
+data: {
+featureClass: "P",
+style: "full",
+maxRows: 12,
+name_startsWith: request.term
+},
+success: function( data ) {
+response( $.map( data.geonames, function( item ) {
+return {
+label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+value: item.name
+};
+}));
+}
+});
+},
+minLength: 2,
+select: function( event, ui ) {
+log( ui.item ?
+ ui.item.label :
+"Nothing selected, input was " + this.value);
+},
+open: function() {
+$( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
+},
+close: function() {
+$( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
+}
+});
+});
+</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/arial.js"></script>
+<script type="text/javascript" src="js/cuf_run.js"></script>
+
+</head>
+
+<body>
+<div class="main">
+  <div class="main_resize">
+    <div class="header">
+      <div class="menu_nav">
+        <ul>
+          <li><a href="user_home.jsp">Home</a></li>
+          <li><a href="history.jsp">History</a></li>
+          <li><a href="http://localhost:8080/abcde/user_auth">Book Ad</a></li>
+          <li class="active"><a href="http://localhost:8080/abcde/contact_auth">Contact Us</a></li>
+          <li><a href="http://localhost:8080/abcde/user_logout">Logout</a></li>
+        </ul>
+        <div class="clr"></div>
+      </div>
+      <div class="hbg">
+      	<img src="images/header_images.jpg" width="641" height="289" alt="" />
+      	<div class="logo">
+          <h1><a href="user_home.html">Book<span>My</span>Ad<small>Online Newspaper Ad Booking</small></a></h1>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="content_bg">
+      
+      
+        <div class="mainbar">
+          <div class="article">
+            <h2><span>Contact</span></h2>
+            <div class="clr"></div>
+            <p>Your Valuable feedback make our site more effective... Thank You for your Feedback!! </p>
+          </div>
+          <div class="article">
+            <h2><span>Send us</span> mail</h2>
+            <div class="clr"></div>
+            <form action="user_feedback" method="post" id="sendemail">
+              <ol>
+                <li>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" class="text" />
+                </li>
+                <li>
+                  <label for="email">Email Address (required)</label>
+                  <input id="email" name="email" class="text" />
+                </li>
+                <li>
+                  <label for="website">City</label>
+                  <input id="city" class="text"/>
+                    <div class="ui-widget" style="margin-top:2em; font-family:Arial">
+                    <div id="log" style="overflow: auto;" class="ui-widget-content"></div>
+                    </div>
+                </li>
+                
+                <li>
+                  <label for="message">Your Message</label>
+                  <textarea id="message" name="message" rows="8" cols="50"></textarea>
+                </li>
+                <li>
+                  <input type="submit" class="textbutton" value="Submit" name="submit"/>
+                  <input type="reset" class="textbutton" value="Clear" name="clear"/>
+                  <div class="clr"></div>
+                </li>
+              </ol>
+            </form>
+          </div>
+        </div>
+        
+        
+        <div class="sidebar">
+          <div class="gadget">
+            <h2><span>Links</span></h2>
+            <div class="clr"></div>
+            <ul class="sb_menu">
+              <li><a href="user_home.jsp">Home</a></li>
+              <li><a href="history.jsp">History</a></li>
+              <li><a href="http://localhost:8080/abcde/user_auth">Book Classified Ad</a></li>
+              <li><a href="http://localhost:8080/abcde/ad_auth">Book Classified Display Ad</a></li>
+              <li><a href="#">How to Book</a></li>
+              <li><a href="#">View Rates</a></li>
+              <li class="active"><a href="http://localhost:8080/abcde/contact_auth">Feedback</a></li>
+            </ul>
+          </div>
+          
+        
+        </div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer_resize">
+      <p class="lf">Copyright &copy; 2014 <a href="#">BookMyAd</a></p>
+      <p class="rf">All Rights Reserved</p>
+      <div class="clr"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
