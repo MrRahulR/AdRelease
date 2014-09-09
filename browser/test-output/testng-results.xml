@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+    <line>
+      <![CDATA[<h4><strong><em>----- Some extra methods Test -----</em></strong></h4>]]>
+    </line>
+    <line>
+      <![CDATA[<h3> Open URL </h3><br>]]>
+    </line>
+  </reporter-output>
+  <suite name="suite" duration-ms="39164" started-at="2014-09-04T09:37:56Z" finished-at="2014-09-04T09:38:35Z">
+    <groups>
+    </groups>
+    <test name="Common_Methods" duration-ms="39164" started-at="2014-09-04T09:37:56Z" finished-at="2014-09-04T09:38:35Z">
+      <class name="parellel_browser.Common_Methods">
+        <test-method status="PASS" signature="fetchSuiteConfiguration(org.testng.ITestContext)[pri:0, instance:parellel_browser.Common_Methods@cdf450]" name="fetchSuiteConfiguration" is-config="true" duration-ms="16" started-at="2014-09-04T15:07:56Z" finished-at="2014-09-04T15:07:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@c2f262]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fetchSuiteConfiguration -->
+        <test-method status="PASS" signature="setUp(java.lang.reflect.Method)[pri:0, instance:parellel_browser.Common_Methods@cdf450]" name="setUp" is-config="true" duration-ms="19180" started-at="2014-09-04T15:07:56Z" finished-at="2014-09-04T15:08:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void parellel_browser.Common_Methods.demons()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="demons()[pri:0, instance:parellel_browser.Common_Methods@cdf450]" name="demons" duration-ms="19396" started-at="2014-09-04T15:08:15Z" finished-at="2014-09-04T15:08:34Z">
+          <reporter-output>
+            <line>
+              <![CDATA[<h4><strong><em>----- Some extra methods Test -----</em></strong></h4>]]>
+            </line>
+            <line>
+              <![CDATA[<h3> Open URL </h3><br>]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- demons -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:parellel_browser.Common_Methods@cdf450]" name="tearDown" is-config="true" duration-ms="533" started-at="2014-09-04T15:08:34Z" finished-at="2014-09-04T15:08:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=demons status=SUCCESS method=Common_Methods.demons()[pri:0, instance:parellel_browser.Common_Methods@cdf450] output=<h4><strong><em>----- Some extra methods Test -----</em></strong></h4>]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- parellel_browser.Common_Methods -->
+    </test> <!-- Common_Methods -->
+  </suite> <!-- suite -->
+</testng-results>

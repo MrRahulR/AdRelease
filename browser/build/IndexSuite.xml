@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="suite" verbose="10" parallel="tests">
+    
+    <!-- Put IP of localhost/Grid Hub machine -->
+	<parameter name="selenium.host" value="localhost" />
+
+	
+	
+	<!-- Put Port of localhost RC/Grid Hub machine -->
+	<parameter name="selenium.port" value="4444" />
+	
+
+
+	<parameter name="selenium.browser" value="firefox" /> 
+<!-- 	<parameter name="selenium.browser" value="chrome" /> -->
+	<parameter name="selenium.url" value="http://www.gmail.com" />
+
+
+<!-- 	<test name="Open_Google"> -->
+
+<!-- 		<classes> -->
+<!-- 			<class name="parellel_browser.Parallel_Browser"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="test_page" /> -->
+<!-- 					<exclude name="setUp" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+<!-- 	<test name="Window_Handle"> -->
+
+<!-- 		<classes> -->
+<!-- 			<class name="parellel_browser.WindowHandle"> -->
+<!-- 				<methods> -->
+<!-- 					<include name="windowHandle" /> -->
+<!-- 				</methods> -->
+<!-- 			</class> -->
+<!-- 		</classes> -->
+<!-- 	</test> -->
+	
+		<test name="Common_Methods">
+
+		<classes>
+			<class name="parellel_browser.Common_Methods">
+				<methods>
+					<include name="demons" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+</suite>
